@@ -1206,10 +1206,10 @@ function openModal(id){
   backdrop.classList.add('open');
   document.body.style.overflow = 'hidden';
   document.getElementById('modalClose').addEventListener('click', closeModal);
-  try{ history.replaceState(null, '', '#' + p.id); }catch(e){}
+  try{ history.replaceState(null, '', location.pathname + '?p=' + p.id); }catch(e){}
   const copyBtn = document.getElementById('modalCopyLink');
   copyBtn.addEventListener('click', () => {
-    const url = location.origin + location.pathname + '#' + p.id;
+    const url = location.origin + location.pathname + '?p=' + p.id;
     const done = () => {
       copyBtn.textContent = '✓';
       setTimeout(() => { copyBtn.textContent = '🔗'; }, 1600);
@@ -1237,7 +1237,7 @@ function fallbackCopy(text, done){
 function closeModal(){
   backdrop.classList.remove('open');
   document.body.style.overflow = '';
-  try{ history.replaceState(null, '', location.pathname + location.search); }catch(e){}
+  try{ history.replaceState(null, '', location.pathname); }catch(e){}
 }
 backdrop.addEventListener('click', (e)=>{ if(e.target === backdrop) closeModal(); });
 document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal(); });
@@ -1246,12 +1246,18 @@ document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal();
 renderPills();
 renderProjects();
 renderFilterNote();
-if(location.hash){
-  const targetId = location.hash.slice(1);
-  if(PROJECTS.some(x => x.id === targetId)){
-    openModal(targetId);
-  }
-}
+/* Deep link: aceita tanto #id quanto ?p=id.
+   Alguns sites (LinkedIn entre eles) removem o #fragmento ao salvar um link,
+   por isso o botão de copiar gera a versão com ?p=. */
+(function openFromUrl(){
+  let targetId = '';
+  try{
+    const params = new URLSearchParams(location.search);
+    targetId = params.get('p') || params.get('projeto') || '';
+  }catch(e){}
+  if(!targetId && location.hash) targetId = location.hash.slice(1);
+  if(targetId && PROJECTS.some(x => x.id === targetId)) openModal(targetId);
+})();
 </script>
 </body>
 </html>
