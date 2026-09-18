@@ -208,6 +208,7 @@
     padding:5px 11px; border-radius:999px; z-index:2;
   }
   .status-badge.doc{ background:var(--ok-soft); color:var(--ok); }
+  .status-badge.done{ background:var(--accent-soft); color:var(--accent); }
   .status-badge.build{ background:var(--build-soft); color:var(--build); }
   .card-body{ padding:18px 20px 20px; display:flex; flex-direction:column; gap:8px; flex:1; }
   .card-body h3{ font-size:1.04rem; font-weight:700; line-height:1.3; }
@@ -649,7 +650,7 @@ const PROJECTS = [
   {
     id:'lia', title:'Lia: automação financeira ponta a ponta, do lançamento no SAP ao relatório executivo',
     client:'Setor de logística offshore', role:'Líder técnica do projeto, atuando no mapeamento do processo, desenvolvimento dos dashboards, pipes e parte da automação RPA e liderando uma equipe de 5 pessoas',
-    duration:'1 ano', status:'doc', art:'lia',
+    duration:'1 ano', status:'done', art:'lia',
     desc:'Automação financeira ponta a ponta: RPA no SAP, motor de regras no Pipefy, IA para notas fiscais e dashboards executivos, implantada em mais de 20 áreas.',
     tags:['Pipefy','Microsoft Power BI','SAP ERP','Microsoft Power Automate','Active Pieces','Gestão de projetos','Microsoft Excel','Mapeamento de processos de negócios','Draw.IO'],
     tools:['SAP','Pipefy','Power Automate','Active Pieces','Power BI','IA de processamento de documentos','Draw.IO','Excel'],
@@ -985,7 +986,11 @@ function renderFilterNote(){
   }
 }
 
-function statusLabel(s){ return s === 'doc' ? 'Em documentação' : 'Em construção'; }
+function statusLabel(s){
+  if(s === 'done') return 'Case completo';
+  if(s === 'doc') return 'Em documentação';
+  return 'Em construção';
+}
 
 function renderProjects(){
   const grid = document.getElementById('projectsGrid');
@@ -1053,10 +1058,11 @@ function openModal(id){
         <div class="modal-tools">${[...p.tools, ...p.tags.filter(t=>!p.tools.includes(t))].map(t=>`<span class="tag-dot">${t}</span>`).join('')}</div>
       </div></div>
 
+      ${(p.links.repo || p.links.doc) ? `
       <div class="modal-links">
-        ${p.links.repo ? `<a href="${p.links.repo}" target="_blank" rel="noopener">Repositório ↗</a>` : `<span>Repositório (em breve)</span>`}
-        ${p.links.doc ? `<a href="${p.links.doc}" target="_blank" rel="noopener">Documento completo ↗</a>` : `<span>Documento completo (em breve)</span>`}
-      </div>
+        ${p.links.repo ? `<a href="${p.links.repo}" target="_blank" rel="noopener">Repositório ↗</a>` : ''}
+        ${p.links.doc ? `<a href="${p.links.doc}" target="_blank" rel="noopener">Documento completo ↗</a>` : ''}
+      </div>` : ''}
     </div>
   `;
   backdrop.classList.add('open');
