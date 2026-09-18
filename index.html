@@ -655,10 +655,6 @@ const ART = {
     </g>
     <g fill="var(--build)"><circle cx="235" cy="155" r="7"/></g>
   `),
-  twolayer: svgWrap(`
-    <rect x="140" y="120" width="90" height="90" rx="16" fill="var(--accent)"/>
-    <rect x="190" y="160" width="90" height="90" rx="16" fill="var(--slate)"/>
-  `),
 };
 
 /* ============ PROJECT DATA ============ */
@@ -946,20 +942,6 @@ const PROJECTS = [
       escopo:'Um motor que recebe duas ou mais bases fictícias e faz três coisas: classificação de sensibilidade (LGPD) — identifica CPF, e-mail, endereço, dados de saúde/financeiros; comparação entre fontes (qualidade de dados) — cruza registros e aponta divergências; e um painel com métricas consolidadas de completude, consistência, duplicidade e sensibilidade.',
       execucao:'Python lê as bases, faz o de-para/matching entre registros (por CPF ou nome + data de nascimento), aplica as regras de classificação de sensibilidade e calcula as métricas de qualidade. SQL Server armazena as bases originais, os resultados da comparação e o histórico das métricas ao longo do tempo. A camada de visualização é um painel em Streamlit mostrando o placar de qualidade e conformidade.',
       resultados:'Projeto ainda em construção — próximo passo é a primeira versão funcional do motor de comparação e do painel de métricas.',
-      aprendizados:'Em breve: aprendizados detalhados deste projeto.'
-    }, links:{}
-  },
-  {
-    id:'twolayer', title:'TwoLayer — estruturação da consultoria própria',
-    client:'Projeto pessoal', role:'Fundadora', status:'build', art:'twolayer',
-    desc:'Formalização da TwoLayer como consultoria própria em Pipefy e Power BI — posicionamento, precificação e contratos.',
-    tags:['Python','SQL'],
-    tools:['Python','SQL'],
-    sections:{
-      contexto:'Já atuo como consultora freelancer em automação de processos e Pipefy, mas sem CNPJ formalizado e sem estrutura de negócio definida — falta precificação clara, posicionamento de marca e modelo de contratos.',
-      escopo:'Estruturação da empresa própria de consultoria em Pipefy e Power BI: formalização, posicionamento de marca, modelo de precificação e contratos.',
-      execucao:'Em breve: detalhamento da execução deste projeto.',
-      resultados:'Em breve: resultados detalhados deste projeto.',
       aprendizados:'Em breve: aprendizados detalhados deste projeto.'
     }, links:{}
   },
