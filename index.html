@@ -668,7 +668,7 @@ const PROJECTS = [
   {
     id:'lia', title:'Lia: automação financeira ponta a ponta, do lançamento no SAP ao relatório executivo',
     client:'Setor de logística offshore', role:'Líder técnica do projeto, atuando no mapeamento do processo, desenvolvimento dos dashboards, pipes e parte da automação RPA e liderando uma equipe de 5 pessoas',
-    duration:'1 ano', status:'done', art:'lia',
+    duration:'out/2024 a ago/2025', status:'done', art:'lia',
     desc:'Automação financeira ponta a ponta: RPA no SAP, motor de regras no Pipefy, IA para notas fiscais e dashboards executivos, implantada em mais de 20 áreas.',
     tags:['Pipefy','Microsoft Power BI','SAP ERP','Microsoft Power Automate','Active Pieces','Gestão de projetos','Microsoft Excel','Mapeamento de processos de negócios','Draw.IO'],
     tools:['SAP','Pipefy','Power Automate','Active Pieces','Power BI','IA de processamento de documentos','Draw.IO'],
@@ -814,7 +814,7 @@ const PROJECTS = [
   {
     id:'obras-offshore', title:'Gestão de Obras Offshore: do WhatsApp ao relatório diário para a diretoria',
     client:'Setor de logística offshore', role:'Líder técnica do projeto, atuando no mapeamento do processo com o PMO, desenvolvimento dos pipes de RDO e dos dashboards, liderando um time de 3 pessoas',
-    duration:'Projeto piloto de Pipefy na companhia', status:'done', art:'obrasOffshore',
+    duration:'jan/2025 a ago/2025', status:'done', art:'obrasOffshore',
     desc:'Implantação do Pipefy na companhia usando o PMO como piloto: quatro fluxos conectados, relatório diário para a diretoria e book final de obra gerado automaticamente.',
     tags:['Pipefy','Microsoft Power BI','Gestão de projetos','Active Pieces','Mapeamento de processos de negócios','Microsoft Excel','Draw.IO'],
     tools:['Pipefy','Power BI','Active Pieces','Workato','Draw.IO'],
@@ -960,18 +960,72 @@ const PROJECTS = [
     ], links:{}
   },
   {
-    id:'data-lakehouse', title:'Data Lakehouse Fabric',
-    client:'Setor de logística offshore', role:'Líder técnica', status:'doc', art:'dataLakehouse',
-    desc:'Liderança técnica na implantação do Data Lake corporativo em Microsoft Fabric, base para dashboards mais escaláveis.',
-    tags:['Microsoft Fabric','Python','SQL'],
-    tools:['Microsoft Fabric','Power BI','Python','SQL'],
+    id:'data-lakehouse', title:'Data Lakehouse em Microsoft Fabric: a primeira arquitetura de dados da companhia',
+    client:'Setor de logística offshore', role:'Liderança do projeto: levantamento de requisitos, seleção da ferramenta, gestão das consultorias e construção de parte das tabelas',
+    duration:'mar/2024 a abr/2025', status:'done', art:'dataLakehouse',
+    desc:'Implantação do primeiro data lakehouse da companhia em Microsoft Fabric, com dashboard que compara a frota aos requisitos de cada edital.',
+    tags:['Microsoft Fabric','Python','SQL','Microsoft Power BI','Pipefy','Gestão de projetos','Governança de dados','Microsoft Power Automate'],
+    tools:['Microsoft Fabric','OneLake','PySpark','SQL','Power BI','Pipefy','Power Automate','AI Builder','SharePoint'],
     sections:{
-      contexto:'A empresa precisava de uma arquitetura de dados corporativa que suportasse dashboards e análises mais escaláveis do que a estrutura então existente permitia.',
-      escopo:'Estruturação da arquitetura de dados da empresa utilizando Microsoft Fabric, criando a base para análises futuras em Power BI.',
-      execucao:'Atuação na liderança técnica da implantação do Data Lake corporativo; o desenvolvimento foi executado pelo time sob essa liderança.',
-      resultados:'Base de dados corporativa estruturada, organizando a arquitetura de dados da empresa e criando fundação para dashboards e análises mais escaláveis.',
-      aprendizados:'Em breve: aprendizados detalhados deste projeto.'
-    }, links:{}
+      contexto:'A companhia não tinha área de dados. No dia da minha promoção para analista de dados, recebi a missão de implantar um data lake corporativo do zero. O piloto escolhido foi a área de engenharia, que tinha um gargalo real: a cada edital recebido do cliente, a análise de quais embarcações da frota poderiam concorrer, qual delas mais se aproximava das exigências e o que faltava para atender era feita manualmente, documento por documento.',
+      escopo:'Estruturar a primeira arquitetura de dados da companhia e provar valor com um caso de negócio concreto: cruzar automaticamente os requisitos técnicos dos editais com os dados técnicos da frota. O escopo cobriu desde o levantamento de requisitos para a contratação até a entrega do dashboard usado pela área de engenharia.',
+      execucao:'Estudei o tema e escrevi o documento de requisitos que suprimentos usou para receber propostas de fornecedores, conduzindo essa etapa junto ao meu gerente. Fiz um soft selection das ferramentas e, como todo o ambiente da empresa era Microsoft, a escolha foi o Fabric, ainda bastante embrionário na época; nesse processo estudei o modelo de SKU e como a mudança poderia reduzir o custo do Power BI. Na execução atuei principalmente na gestão do projeto e das consultorias envolvidas, mas coloquei a mão em cada frente para direcionar as decisões e aprender: construí parte das tabelas do lakehouse em PySpark e SQL dentro do Fabric, acompanhei a configuração do Pipefy para o cadastro técnico das embarcações e a esteira de leitura dos editais com Power Automate, AI Builder e SharePoint.',
+      resultados:'O data lakehouse foi entregue com sucesso, com as camadas Bronze, Silver e Gold estruturadas no OneLake e um dashboard em Power BI conectado às tabelas, no qual a área de engenharia compara uma embarcação com os requisitos de um edital de forma intuitiva. A companhia passou a ter uma base de dados corporativa própria, que se tornou fundação para os projetos de dados seguintes.',
+      aprendizados:'O principal aprendizado foi sobre foco de escopo. Ao longo do projeto, a atenção migrou do data lake para a camada de inteligência artificial, e a entrega de IA frustrou a expectativa da área de negócio, o que acabou ofuscando um resultado de infraestrutura que tinha sido bem-sucedido. O projeto seguiu depois com outra consultoria e a IA foi reimplementada em Python. Hoje eu trataria a IA como uma fase separada, com expectativa e critério de aceite próprios, para que ela não comprometa a percepção de valor da fundação de dados que a sustenta.'
+    },
+    extra:[
+      {
+        title:'Do zero a uma área de dados',
+        html:`
+          <div class="xl-stat-row">
+            <div><div class="xl-stat-big">1º</div><div class="xl-stat-label">projeto de dados da companhia</div></div>
+            <div><div class="xl-stat-big">3</div><div class="xl-stat-label">camadas estruturadas no OneLake</div></div>
+            <div><div class="xl-stat-big">45</div><div class="xl-stat-label">embarcações na base da frota</div></div>
+          </div>
+          <div class="xl-callout"><b>Não existia área de dados na empresa.</b> A missão chegou junto com a promoção: implantar um data lake do zero, escolher a ferramenta, contratar quem construiria e provar valor com um caso de negócio real.</div>
+        `
+      },
+      {
+        title:'Como conduzi a escolha da ferramenta',
+        html:`
+          <ul class="xl-ind-list">
+            <li><b>Requisitos antes de fornecedor:</b> escrevi o documento de requisitos técnicos e funcionais que suprimentos usou para abrir a concorrência, conduzindo a etapa junto ao meu gerente.</li>
+            <li><b>Soft selection:</b> comparei as alternativas de mercado considerando o ambiente já existente na companhia, todo baseado em Microsoft.</li>
+            <li><b>Escolha do Fabric:</b> a plataforma ainda era embrionária na época, o que exigiu estudo do modelo de SKU e da capacidade contratada.</li>
+            <li><b>Custo como critério:</b> analisei como a migração poderia reduzir o custo de licenciamento do Power BI, transformando a decisão técnica também em argumento financeiro.</li>
+          </ul>
+        `
+      },
+      {
+        title:'Arquitetura',
+        html:`
+          <p style="font-size:.85rem;color:var(--ink-soft);margin:0 0 10px;">Duas fontes alimentam o lakehouse: o cadastro técnico das embarcações, feito no Pipefy, e os editais recebidos do cliente, lidos automaticamente por Power Automate com AI Builder. Os dados percorrem as camadas Bronze, Silver e Gold no OneLake até chegarem ao consumo:</p>
+          <div class="xl-figure"><svg viewBox="0 0 1440 700" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L6,3 z" fill="var(--ink-soft)" opacity="0.7"/>
+  </marker>
+  <marker id="arrowAccent" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+    <path d="M0,0 L0,6 L6,3 z" fill="var(--accent)"/>
+  </marker>
+</defs>
+<rect x="50" y="40" width="1340" height="132" rx="16" fill="none" stroke="var(--line)" stroke-width="1.5" stroke-dasharray="6 6"/><text x="66" y="64" font-family="Inter" font-size="13" font-weight="600" fill="var(--ink-soft)">Origem dos dados</text><rect x="110" y="70" width="280" height="78" rx="14" fill="var(--slate)" stroke="var(--slate)" stroke-width="1.5"/><text x="250.0" y="104.98" text-anchor="middle" font-family="Sora" font-size="14" font-weight="600" fill="var(--accent-ink)">Pipefy</text><text x="250.0" y="136" text-anchor="middle" font-family="Inter" font-size="11.5" fill="var(--accent-ink)" opacity="0.85">cadastro técnico das embarcações</text><rect x="560" y="70" width="300" height="78" rx="14" fill="var(--slate)" stroke="var(--slate)" stroke-width="1.5"/><text x="710.0" y="104.98" text-anchor="middle" font-family="Sora" font-size="14" font-weight="600" fill="var(--accent-ink)">SharePoint</text><text x="710.0" y="136" text-anchor="middle" font-family="Inter" font-size="11.5" fill="var(--accent-ink)" opacity="0.85">editais (bids) recebidos do cliente</text><rect x="1040" y="70" width="300" height="78" rx="14" fill="var(--slate)" stroke="var(--slate)" stroke-width="1.5"/><text x="1190.0" y="95.48" text-anchor="middle" font-family="Sora" font-size="14" font-weight="600" fill="var(--accent-ink)">Power Automate</text><text x="1190.0" y="114.48" text-anchor="middle" font-family="Sora" font-size="14" font-weight="600" fill="var(--accent-ink)">+ AI Builder</text><text x="1190.0" y="136" text-anchor="middle" font-family="Inter" font-size="11.5" fill="var(--accent-ink)" opacity="0.85">extrai requisitos do edital</text><rect x="50" y="210" width="1340" height="250" rx="16" fill="none" stroke="var(--line)" stroke-width="1.5" stroke-dasharray="6 6"/><text x="66" y="234" font-family="Inter" font-size="13" font-weight="600" fill="var(--ink-soft)">Microsoft Fabric / OneLake: camadas do data lakehouse</text><rect x="110" y="300" width="240" height="84" rx="14" fill="var(--surface)" stroke="var(--line)" stroke-width="1.5"/><text x="230.0" y="337.98" text-anchor="middle" font-family="Sora" font-size="14" font-weight="600" fill="var(--ink)">Bronze</text><text x="230.0" y="372" text-anchor="middle" font-family="Inter" font-size="11.5" fill="var(--ink-soft)" opacity="1">dados brutos</text><rect x="440" y="300" width="300" height="104" rx="14" fill="var(--accent)" stroke="var(--accent)" stroke-width="2.5"/><text x="590.0" y="354.3" text-anchor="middle" font-family="Sora" font-size="15" font-weight="700" fill="var(--accent-ink)">Silver</text><rect x="830" y="300" width="240" height="84" rx="14" fill="var(--surface)" stroke="var(--line)" stroke-width="1.5"/><text x="950.0" y="337.98" text-anchor="middle" font-family="Sora" font-size="14" font-weight="600" fill="var(--ink)">Gold</text><text x="950.0" y="372" text-anchor="middle" font-family="Inter" font-size="11.5" fill="var(--ink-soft)" opacity="1">pronto para consumo</text><rect x="1140" y="292" width="200" height="100" rx="14" fill="var(--surface)" stroke="var(--line)" stroke-width="1.5"/><text x="1240.0" y="328.48" text-anchor="middle" font-family="Sora" font-size="14" font-weight="600" fill="var(--ink)">PySpark</text><text x="1240.0" y="347.48" text-anchor="middle" font-family="Sora" font-size="14" font-weight="600" fill="var(--ink)">e SQL</text><text x="1240.0" y="380" text-anchor="middle" font-family="Inter" font-size="11.5" fill="var(--ink-soft)" opacity="1">notebooks</text><text x="590" y="432" text-anchor="middle" font-family="Inter" font-size="12" fill="var(--ink-soft)">silver_tb_vessel · silver_tb_bids</text><rect x="50" y="496" width="1340" height="158" rx="16" fill="none" stroke="var(--line)" stroke-width="1.5" stroke-dasharray="6 6"/><text x="66" y="520" font-family="Inter" font-size="13" font-weight="600" fill="var(--ink-soft)">Consumo pelo negócio</text><rect x="210" y="542" width="380" height="88" rx="14" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.5"/><text x="400.0" y="581.98" text-anchor="middle" font-family="Sora" font-size="14" font-weight="600" fill="var(--ink)">Dashboard em Power BI</text><text x="400.0" y="618" text-anchor="middle" font-family="Inter" font-size="11.5" fill="var(--ink-soft)" opacity="1">compara embarcação x requisitos do edital</text><rect x="700" y="542" width="380" height="88" rx="14" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.5"/><text x="890.0" y="581.98" text-anchor="middle" font-family="Sora" font-size="14" font-weight="600" fill="var(--ink)">Chatbot no Teams</text><text x="890.0" y="618" text-anchor="middle" font-family="Inter" font-size="11.5" fill="var(--ink-soft)" opacity="1">consulta em linguagem natural</text><path d="M250,148 C250,224.0 230,224.0 230,300" fill="none" stroke="var(--accent)" stroke-width="2" opacity="0.85" marker-end="url(#arrowAccent)"/><path d="M860,109 L1040,109" fill="none" stroke="var(--ink-soft)" stroke-width="2" opacity="0.5" marker-end="url(#arrow)"/><path d="M1150,148 C1150,224.0 300,224.0 300,300" fill="none" stroke="var(--accent)" stroke-width="2" opacity="0.85" marker-end="url(#arrowAccent)"/><path d="M1140,330 L1070,330" fill="none" stroke="var(--ink-soft)" stroke-width="2" opacity="0.5" marker-end="url(#arrow)"/><path d="M1140,355 L740,355" fill="none" stroke="var(--ink-soft)" stroke-width="2" opacity="0.5" stroke-dasharray="5 5" marker-end="url(#arrow)"/><path d="M350,342 L440,342" fill="none" stroke="var(--accent)" stroke-width="2" opacity="0.85" marker-end="url(#arrowAccent)"/><path d="M740,342 L830,342" fill="none" stroke="var(--accent)" stroke-width="2" opacity="0.85" marker-end="url(#arrowAccent)"/><path d="M920,384 C920,463.0 400,463.0 400,542" fill="none" stroke="var(--accent)" stroke-width="2" opacity="0.85" marker-end="url(#arrowAccent)"/><path d="M980,384 C980,463.0 890,463.0 890,542" fill="none" stroke="var(--accent)" stroke-width="2" opacity="0.85" marker-end="url(#arrowAccent)"/>
+</svg></div>
+          <p class="xl-fig-caption">As tabelas da camada Silver foram modeladas para permitir o cruzamento direto entre requisitos do edital e atributos técnicos da frota. Construí parte dessas tabelas em PySpark e SQL dentro do Fabric.</p>
+        `
+      },
+      {
+        title:'O que ficou de aprendizado executivo',
+        html:`
+          <ul class="xl-ind-list">
+            <li><b>Fundação e vitrine são entregas diferentes:</b> o data lakehouse era infraestrutura, a IA era vitrine. Quando a vitrine frustra, ela contamina a percepção da fundação, mesmo que esta tenha sido entregue bem.</li>
+            <li><b>Expectativa de IA precisa de critério de aceite:</b> hoje eu separaria a camada de inteligência artificial em uma fase própria, com escopo, expectativa e critério de aceite acordados com o negócio antes do início.</li>
+            <li><b>Aprender conduzindo:</b> havia consultoria para todas as frentes, e ainda assim coloquei a mão em cada uma delas. Isso garantiu que as decisões de arquitetura fossem tomadas com entendimento real, e não delegadas por desconhecimento.</li>
+            <li><b>A base ficou de pé:</b> o lakehouse seguiu como fundação dos projetos de dados seguintes da companhia, inclusive como destino previsto dos dados de custo de obra.</li>
+          </ul>
+        `
+      }
+    ], links:{}
   },
   {
     id:'expurgo-dados', title:'Auditoria e expurgo de dados sensíveis',
@@ -987,20 +1041,7 @@ const PROJECTS = [
       aprendizados:'Em breve: aprendizados detalhados deste projeto.'
     }, links:{}
   },
-  {
-    id:'onboarding-fundos', title:'Onboarding de fundos de investimento',
-    client:'Gestão de fundos de investimento', role:'Consultora Pipefy (Desenvolvimento)', status:'doc', art:'onboardingFundos',
-    desc:'Automação do onboarding de fundos com leitura de documentos por IA e orquestração entre múltiplos pipes conectados.',
-    tags:['Mapeamento de processos de negócios','Pipefy','Active Pieces'],
-    tools:['Pipefy','Active Pieces','IA de leitura de documentos'],
-    sections:{
-      contexto:'Em breve: contexto detalhado deste projeto.',
-      escopo:'Estruturação do processo de onboarding de fundos de investimento, hoje disperso e sem padronização documental.',
-      execucao:'Automação de onboarding com leitura de documentos via IA e orquestração entre múltiplos pipes conectados no Pipefy.',
-      resultados:'Em breve: resultados detalhados deste projeto.',
-      aprendizados:'Em breve: aprendizados detalhados deste projeto.'
-    }, links:{}
-  },
+  
   {
     id:'rpa-ppp', title:'RPA — Solicitação de PPP',
     client:'Setor de logística offshore', role:'Analista de Dados', status:'doc', art:'rpaPpp',
@@ -1067,6 +1108,20 @@ const PROJECTS = [
       contexto:'Em breve: contexto detalhado deste projeto.',
       escopo:'Monitorar volume e status de chamados/atendimentos, dando visibilidade sobre gargalos e tempos de resposta.',
       execucao:'Em breve: detalhamento da execução deste projeto.',
+      resultados:'Em breve: resultados detalhados deste projeto.',
+      aprendizados:'Em breve: aprendizados detalhados deste projeto.'
+    }, links:{}
+  },
+  {
+    id:'onboarding-fundos', title:'Onboarding de fundos de investimento',
+    client:'Gestão de fundos de investimento', role:'Consultora Pipefy (Desenvolvimento)', status:'build', art:'onboardingFundos',
+    desc:'Automação do onboarding de fundos com leitura de documentos por IA e orquestração entre múltiplos pipes conectados.',
+    tags:['Mapeamento de processos de negócios','Pipefy','Active Pieces'],
+    tools:['Pipefy','Active Pieces','IA de leitura de documentos'],
+    sections:{
+      contexto:'Em breve: contexto detalhado deste projeto.',
+      escopo:'Estruturação do processo de onboarding de fundos de investimento, hoje disperso e sem padronização documental.',
+      execucao:'Automação de onboarding com leitura de documentos via IA e orquestração entre múltiplos pipes conectados no Pipefy.',
       resultados:'Em breve: resultados detalhados deste projeto.',
       aprendizados:'Em breve: aprendizados detalhados deste projeto.'
     }, links:{}
