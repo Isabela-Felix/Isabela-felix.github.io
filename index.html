@@ -229,6 +229,10 @@
   .card-body{ padding:18px 20px 20px; display:flex; flex-direction:column; gap:8px; flex:1; }
   .card-body h3{ font-size:1.04rem; font-weight:700; line-height:1.3; }
   .card-client{ font-size:.78rem; color:var(--ink-soft); font-weight:500; }
+  .card-duration{
+    font-size:.74rem; color:var(--accent); font-weight:600; margin-top:2px;
+    display:inline-flex; align-items:center; gap:5px;
+  }
   .card-body p.desc{ font-size:.88rem; color:var(--ink-soft); line-height:1.5; margin:2px 0 4px; }
   .card-tags{ display:flex; flex-wrap:wrap; gap:6px; margin-top:auto; }
   .tag-dot{ font-size:.72rem; color:var(--ink-soft); background:var(--surface-2); padding:3px 9px; border-radius:7px; }
@@ -1201,6 +1205,7 @@ function renderProjects(){
       <div class="card-body">
         <h3>${p.title}</h3>
         <div class="card-client">${p.client} · ${p.role}</div>
+        ${p.duration ? `<div class="card-duration">🗓 ${p.duration}</div>` : ''}
         <p class="desc">${p.desc}</p>
         <div class="card-tags">${p.tags.slice(0,3).map(t=>`<span class="tag-dot">${t}</span>`).join('')}</div>
       </div>
