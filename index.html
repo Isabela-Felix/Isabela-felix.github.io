@@ -544,6 +544,57 @@ const svgWrap = (inner) => `<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/
   <rect width="400" height="400" fill="var(--surface-2)"/>${inner}</svg>`;
 
 const ART = {
+  ecossistemaPipefy: svgWrap(`
+    <g stroke="var(--line)" stroke-width="5" stroke-linecap="round">
+      <line x1="200" y1="200" x2="200" y2="95"/><line x1="200" y1="200" x2="291" y2="147"/>
+      <line x1="200" y1="200" x2="291" y2="253"/><line x1="200" y1="200" x2="200" y2="305"/>
+      <line x1="200" y1="200" x2="109" y2="253"/><line x1="200" y1="200" x2="109" y2="147"/>
+    </g>
+    <path d="M200 95 A105 105 0 0 1 291 147" fill="none" stroke="var(--accent)" stroke-width="4" stroke-dasharray="3 9" stroke-linecap="round"/>
+    <path d="M109 253 A105 105 0 0 1 109 147" fill="none" stroke="var(--accent)" stroke-width="4" stroke-dasharray="3 9" stroke-linecap="round"/>
+    <g fill="var(--surface)" stroke="var(--slate)" stroke-width="5">
+      <circle cx="200" cy="95" r="20"/><circle cx="291" cy="147" r="20"/><circle cx="291" cy="253" r="20"/>
+      <circle cx="200" cy="305" r="20"/><circle cx="109" cy="253" r="20"/><circle cx="109" cy="147" r="20"/>
+    </g>
+    <circle cx="291" cy="253" r="9" fill="var(--build)"/>
+    <circle cx="200" cy="200" r="38" fill="var(--accent)"/>
+    <circle cx="200" cy="200" r="14" fill="var(--accent-ink)"/>
+  `),
+  compraPagamento: svgWrap(`
+    <rect x="60" y="165" width="70" height="70" rx="14" fill="var(--surface)" stroke="var(--slate)" stroke-width="5"/>
+    <path d="M78 190h34M78 205h34M78 220h20" stroke="var(--line)" stroke-width="5" stroke-linecap="round"/>
+    <path d="M140 200h32" stroke="var(--ink-soft)" stroke-width="5" stroke-linecap="round"/>
+    <path d="M166 190l10 10-10 10" fill="none" stroke="var(--ink-soft)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="185" y="165" width="70" height="70" rx="14" fill="var(--accent)"/>
+    <path d="M204 201l11 11 22-24" fill="none" stroke="var(--accent-ink)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M265 200h32" stroke="var(--ink-soft)" stroke-width="5" stroke-linecap="round"/>
+    <path d="M291 190l10 10-10 10" fill="none" stroke="var(--ink-soft)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="340" cy="200" r="32" fill="var(--build)"/>
+    <text x="340" y="212" text-anchor="middle" font-family="Sora, sans-serif" font-size="32" font-weight="700" fill="var(--accent-ink)">$</text>
+  `),
+  leadRecebimento: svgWrap(`
+    <path d="M90 110h170l-60 80v70l-50 25v-95z" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="5" stroke-linejoin="round"/>
+    <g fill="var(--slate)"><circle cx="130" cy="135" r="9"/><circle cx="165" cy="135" r="9"/><circle cx="200" cy="135" r="9"/><circle cx="175" cy="170" r="9"/></g>
+    <path d="M200 265c40 0 60-20 80-45" fill="none" stroke="var(--ink-soft)" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 12"/>
+    <circle cx="300" cy="200" r="36" fill="var(--build)"/>
+    <text x="300" y="213" text-anchor="middle" font-family="Sora, sans-serif" font-size="34" font-weight="700" fill="var(--accent-ink)">$</text>
+  `),
+  cicloColaborador: svgWrap(`
+    <path d="M200 95a105 105 0 0 1 100 138" fill="none" stroke="var(--accent)" stroke-width="12" stroke-linecap="round"/>
+    <path d="M272 283a105 105 0 0 1-150-12" fill="none" stroke="var(--slate)" stroke-width="12" stroke-linecap="round"/>
+    <path d="M102 232a105 105 0 0 1 68-133" fill="none" stroke="var(--build)" stroke-width="12" stroke-linecap="round"/>
+    <path d="M288 214l14 22 18-18" fill="none" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="200" cy="180" r="24" fill="var(--slate)"/>
+    <path d="M155 250c0-28 20-44 45-44s45 16 45 44" fill="var(--slate)"/>
+  `),
+  servicosGovernanca: svgWrap(`
+    <path d="M70 140h120v30a18 18 0 0 0 0 60v30H70v-30a18 18 0 0 0 0-60z" fill="var(--surface)" stroke="var(--slate)" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M95 175h60M95 200h45M95 225h55" stroke="var(--line)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M205 200h28" stroke="var(--ink-soft)" stroke-width="5" stroke-linecap="round"/>
+    <path d="M227 190l10 10-10 10" fill="none" stroke="var(--ink-soft)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M300 120l58 22v48c0 42-26 72-58 86-32-14-58-44-58-86v-48z" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M276 200l17 17 32-34" fill="none" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  `),
   onboardingFundos: svgWrap(`
     <g fill="var(--surface)" stroke="var(--accent)" stroke-width="5">
       <rect x="70" y="110" width="90" height="120" rx="8"/>
@@ -587,22 +638,6 @@ const ART = {
     <rect x="130" y="110" width="140" height="46" rx="6" fill="var(--accent)"/>
     <rect x="160" y="86" width="16" height="30" fill="var(--slate)"/>
     <circle cx="168" cy="80" r="7" fill="var(--build)"/>
-  `),
-  gestaoDesempenho: svgWrap(`
-    <circle cx="200" cy="200" r="95" fill="none" stroke="var(--line)" stroke-width="20"/>
-    <path d="M200 105a95 95 0 0 1 82 142" fill="none" stroke="var(--accent)" stroke-width="20" stroke-linecap="round"/>
-    <line x1="200" y1="200" x2="252" y2="150" stroke="var(--slate)" stroke-width="7" stroke-linecap="round"/>
-    <circle cx="200" cy="200" r="10" fill="var(--slate)"/>
-  `),
-  financeiro360: svgWrap(`
-    <circle cx="200" cy="200" r="100" fill="none" stroke="var(--line)" stroke-width="3" stroke-dasharray="2 8"/>
-    <circle cx="200" cy="200" r="70" fill="none" stroke="var(--accent)" stroke-width="6"/>
-    <g fill="var(--slate)">
-      <rect x="185" y="150" width="14" height="40" rx="3"/>
-      <rect x="205" y="130" width="14" height="60" rx="3"/>
-      <rect x="165" y="165" width="14" height="25" rx="3"/>
-    </g>
-    <g fill="var(--build)"><circle cx="200" cy="130" r="6"/></g>
   `),
   dataLakehouse: svgWrap(`
     <g fill="none" stroke="var(--accent)" stroke-width="5">
@@ -1012,10 +1047,10 @@ const PROJECTS = [
   {
     id:'dashboard-chamados', title:'Dashboard de Chamados: a gestão de serviços de TI em um único painel',
     client:'Setor de logística offshore', role:'Analista de Dados: conexão via API, modelagem, indicadores e desenho do painel',
-    status:'done', art:'dashboardChamados',
+    duration:'dez/2022 a abr/2023', status:'done', art:'dashboardChamados',
     desc:'Painel de gestão de serviços de TI conectado via API à ferramenta de service desk: saldo de chamados em tempo real, SLA, backlog por grupo operador, relatório mensal por diretoria e gestão de mudanças.',
     tags:['Microsoft Power BI'],
-    tools:['Power BI','DAX','Power Query','Conexão via API','Ferramenta de service desk (ITSM)'],
+    tools:['Microsoft Power BI','DAX','Power Query','Conexão via API','Ferramenta de service desk (ITSM)'],
     sections:{
       contexto:'A área de TI atende a companhia inteira por meio de uma ferramenta de service desk, com sete grupos operadores (Service Desk N1 e N2, Sistemas, Operações, SAP, Infraestrutura e Segurança da Informação) e um processo formal de gestão de mudanças, em que cada GMUD passa por cinco aprovações. Os dados estavam todos na ferramenta, mas as perguntas que a gestão fazia todo dia não tinham resposta direta: quanto entrou e quanto saiu hoje, qual grupo está acumulando, o que está envelhecendo na fila, como cada diretoria está sendo atendida e quais mudanças estão paradas esperando aprovação.',
       escopo:'Conectar o Power BI à ferramenta de service desk via API e construir um painel único de gestão de serviços de TI, cobrindo a operação do dia, o acompanhamento por grupo operador, os indicadores de SLA, o fechamento mensal por diretoria, a busca detalhada de chamados e a gestão de mudanças. O painel lê os dados da ferramenta; não altera o processo de atendimento nem a ferramenta em si.',
@@ -1104,32 +1139,112 @@ const PROJECTS = [
     ], links:{}
   },
   {
-    id:'gestao-desempenho', title:'Gestão de Desempenho',
-    client:'Consultoria (cliente confidencial)', role:'Consultora Pipefy (Desenvolvimento)', status:'doc', art:'gestaoDesempenho',
-    desc:'Estruturação do processo de gestão de desempenho da equipe no Pipefy.',
-    tags:['Mapeamento de processos de negócios','Pipefy'],
+    id:'ecossistema-pipefy', title:'Ecossistema de processos no Pipefy: mais de 20 fluxos e um modelo de governança',
+    client:'Empresa de entretenimento digital', role:'Consultora Pipefy (Desenvolvimento)', status:'doc', art:'ecossistemaPipefy',
+    desc:'Mais de 20 processos no Pipefy para uma empresa de entretenimento digital, organizados em quatro jornadas e sustentados por um modelo de governança.',
+    tags:['Pipefy','Mapeamento de processos de negócios','Governança de processos'],
     tools:['Pipefy'],
     sections:{
       contexto:'Em breve: contexto detalhado deste projeto.',
-      escopo:'Estruturar o processo de gestão de desempenho da equipe.',
+      escopo:'Estruturação de mais de 20 processos no Pipefy, das áreas de finanças, comercial, pessoas, jurídico e operações, organizados em quatro jornadas: Da compra ao pagamento, Do lead ao recebimento, Ciclo do colaborador e Gestão de serviços e governança. Além dos processos, implantei um modelo de governança para padronizar como os fluxos são criados, alterados e mantidos.',
       execucao:'Em breve: detalhamento da execução deste projeto.',
       resultados:'Em breve: resultados detalhados deste projeto.',
       aprendizados:'Em breve: aprendizados detalhados deste projeto.'
-    }, links:{}
+    },
+    extra:[
+      {
+        title:'Os cases deste ecossistema',
+        html:`
+          <p style="font-size:.85rem;color:var(--ink-soft);line-height:1.65;margin:0 0 10px;">Cada jornada tem o seu próprio case, com os processos que a compõem:</p>
+          <ul class="xl-ind-list">
+            <li><b><a href="?p=compra-pagamento" onclick="openModal('compra-pagamento');document.getElementById('modalBackdrop').scrollTop=0;return false;" style="color:var(--accent);">Da compra ao pagamento</a>:</b> homologação de fornecedores, solicitação de compra, contratos, estoque, contas a pagar e reembolso.</li>
+            <li><b><a href="?p=servicos-governanca" onclick="openModal('servicos-governanca');document.getElementById('modalBackdrop').scrollTop=0;return false;" style="color:var(--accent);">Gestão de serviços e governança</a>:</b> chamados, GMUD, modelo de governança e comunicados: como o ecossistema é mantido e evolui.</li>
+            <li><b><a href="?p=lead-recebimento" onclick="openModal('lead-recebimento');document.getElementById('modalBackdrop').scrollTop=0;return false;" style="color:var(--accent);">Do lead ao recebimento</a>:</b> qualificação de leads, CRM, projetos, contas a receber e NPS.</li>
+            <li><b><a href="?p=ciclo-colaborador" onclick="openModal('ciclo-colaborador');document.getElementById('modalBackdrop').scrollTop=0;return false;" style="color:var(--accent);">Ciclo do colaborador</a>:</b> da avaliação de currículo ao offboarding, passando por metas, desempenho, PDI e folha.</li>
+          </ul>
+        `
+      }
+    ], links:{}
   },
   {
-    id:'financeiro-360', title:'Financeiro 360',
-    client:'Consultoria (cliente confidencial)', role:'Consultora Pipefy (Desenvolvimento)', status:'doc', art:'financeiro360',
-    desc:'Visão financeira consolidada e centralizada do cliente em uma única estrutura.',
-    tags:['Mapeamento de processos de negócios','Pipefy'],
+    id:'compra-pagamento', title:'Da compra ao pagamento',
+    client:'Empresa de entretenimento digital', role:'Consultora Pipefy (Desenvolvimento)', status:'doc', art:'compraPagamento',
+    desc:'Jornada do dinheiro que sai: da homologação do fornecedor ao pagamento, incluindo contratos, estoque e reembolso.',
+    tags:['Pipefy','Mapeamento de processos de negócios'],
     tools:['Pipefy'],
     sections:{
       contexto:'Em breve: contexto detalhado deste projeto.',
-      escopo:'Estruturar uma visão financeira 360º do cliente, centralizando informações hoje dispersas.',
+      escopo:'Processos desta jornada: Homologação de fornecedores, Solicitação de compra, Gestão de contratos, Controle de estoque, Contas a pagar e Reembolso.',
       execucao:'Em breve: detalhamento da execução deste projeto.',
       resultados:'Em breve: resultados detalhados deste projeto.',
       aprendizados:'Em breve: aprendizados detalhados deste projeto.'
-    }, links:{}
+    },
+    extra:[
+      {
+        title:'Parte do ecossistema',
+        html:`<p style="font-size:.85rem;color:var(--ink-soft);line-height:1.65;margin:0;">Esta jornada faz parte do <a href="?p=ecossistema-pipefy" onclick="openModal('ecossistema-pipefy');document.getElementById('modalBackdrop').scrollTop=0;return false;" style="color:var(--accent);font-weight:600;">Ecossistema de processos no Pipefy</a>, que reúne todos os fluxos e o modelo de governança deste cliente.</p>`
+      }
+    ], links:{}
+  },
+  {
+    id:'servicos-governanca', title:'Gestão de serviços e governança',
+    client:'Empresa de entretenimento digital', role:'Consultora Pipefy (Desenvolvimento)', status:'doc', art:'servicosGovernanca',
+    desc:'Como o ecossistema é mantido e evolui: chamados, GMUD, modelo de governança e comunicados às áreas.',
+    tags:['Pipefy','Mapeamento de processos de negócios','Governança de processos'],
+    tools:['Pipefy'],
+    sections:{
+      contexto:'Em breve: contexto detalhado deste projeto.',
+      escopo:'Processos desta jornada: Gestão de tickets, GMUD, Modelo de governança e Comunicados.',
+      execucao:'Em breve: detalhamento da execução deste projeto.',
+      resultados:'Em breve: resultados detalhados deste projeto.',
+      aprendizados:'Em breve: aprendizados detalhados deste projeto.'
+    },
+    extra:[
+      {
+        title:'Parte do ecossistema',
+        html:`<p style="font-size:.85rem;color:var(--ink-soft);line-height:1.65;margin:0;">Esta jornada faz parte do <a href="?p=ecossistema-pipefy" onclick="openModal('ecossistema-pipefy');document.getElementById('modalBackdrop').scrollTop=0;return false;" style="color:var(--accent);font-weight:600;">Ecossistema de processos no Pipefy</a>, que reúne todos os fluxos e o modelo de governança deste cliente.</p>`
+      }
+    ], links:{}
+  },
+  {
+    id:'lead-recebimento', title:'Do lead ao recebimento',
+    client:'Empresa de entretenimento digital', role:'Consultora Pipefy (Desenvolvimento)', status:'doc', art:'leadRecebimento',
+    desc:'Jornada do dinheiro que entra: da qualificação do lead ao recebimento, com CRM, projetos e NPS.',
+    tags:['Pipefy','Mapeamento de processos de negócios'],
+    tools:['Pipefy'],
+    sections:{
+      contexto:'Em breve: contexto detalhado deste projeto.',
+      escopo:'Processos desta jornada: Qualificação de leads, CRM, Projetos, Contas a receber e NPS.',
+      execucao:'Em breve: detalhamento da execução deste projeto.',
+      resultados:'Em breve: resultados detalhados deste projeto.',
+      aprendizados:'Em breve: aprendizados detalhados deste projeto.'
+    },
+    extra:[
+      {
+        title:'Parte do ecossistema',
+        html:`<p style="font-size:.85rem;color:var(--ink-soft);line-height:1.65;margin:0;">Esta jornada faz parte do <a href="?p=ecossistema-pipefy" onclick="openModal('ecossistema-pipefy');document.getElementById('modalBackdrop').scrollTop=0;return false;" style="color:var(--accent);font-weight:600;">Ecossistema de processos no Pipefy</a>, que reúne todos os fluxos e o modelo de governança deste cliente.</p>`
+      }
+    ], links:{}
+  },
+  {
+    id:'ciclo-colaborador', title:'Ciclo do colaborador',
+    client:'Empresa de entretenimento digital', role:'Consultora Pipefy (Desenvolvimento)', status:'doc', art:'cicloColaborador',
+    desc:'Jornada da pessoa na empresa: da avaliação de currículo ao offboarding, passando por metas, desempenho, PDI e folha de pagamento.',
+    tags:['Pipefy','Mapeamento de processos de negócios'],
+    tools:['Pipefy'],
+    sections:{
+      contexto:'Em breve: contexto detalhado deste projeto.',
+      escopo:'Processos desta jornada: Avaliação de currículo, Onboarding de colaboradores, Gestão de metas, Avaliação de desempenho, PDI e gestão de treinamento, Folha de pagamento e Offboarding de colaboradores.',
+      execucao:'Em breve: detalhamento da execução deste projeto.',
+      resultados:'Em breve: resultados detalhados deste projeto.',
+      aprendizados:'Em breve: aprendizados detalhados deste projeto.'
+    },
+    extra:[
+      {
+        title:'Parte do ecossistema',
+        html:`<p style="font-size:.85rem;color:var(--ink-soft);line-height:1.65;margin:0;">Esta jornada faz parte do <a href="?p=ecossistema-pipefy" onclick="openModal('ecossistema-pipefy');document.getElementById('modalBackdrop').scrollTop=0;return false;" style="color:var(--accent);font-weight:600;">Ecossistema de processos no Pipefy</a>, que reúne todos os fluxos e o modelo de governança deste cliente.</p>`
+      }
+    ], links:{}
   },
   {
     id:'onboarding-fundos', title:'Onboarding de fundos de investimento',
